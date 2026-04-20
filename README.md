@@ -181,7 +181,8 @@ The AI Assistant page is the differentiating feature. On every message, the app:
 This means the AI doesn't give generic advice — it knows you're on Day 22 in your luteal phase with frequent headaches, and responds accordingly.
 
 ##Live link
-https://fem-flow-menstrual-cycle-tracker-6u.vercel.app/
+
+https://fem-flow-menstrual-cycle-tracker-sh.vercel.app/
 
 ## 👩‍💻 Author
 Anoushka Deolia
