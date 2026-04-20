@@ -1,0 +1,9 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #f0c0cc; border-radius: 10px; }
+
+img, video { max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; }

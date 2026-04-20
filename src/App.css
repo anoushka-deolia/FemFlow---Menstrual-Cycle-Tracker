@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+
+:root {
+  --rose:        #e8637a;
+  --rose-light:  #f5a0ae;
+  --rose-pale:   #fde8ec;
+  --plum:        #6b2d5e;
+  --plum-light:  #9b4d8a;
+  --blush:       #fdf0f3;
+  --cream:       #fdf8f5;
+  --text:        #1a1018;
+  --text-muted:  #7a6070;
+  --border:      #f0dde3;
+  --white:       #ffffff;
+  --shadow:      0 2px 20px rgba(107,45,94,0.08);
+  --shadow-lg:   0 8px 40px rgba(107,45,94,0.14);
+  --radius:      16px;
+  --radius-sm:   10px;
+  --sidebar-w:   260px;
+  --menstrual:   #e8637a;
+  --follicular:  #f0a500;
+  --ovulation:   #3dba8a;
+  --luteal:      #7b6fd6;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'DM Serif Display', serif;
+  line-height: 1.2;
+  color: var(--plum);
+}
+
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: inherit; }
+
+/* ── Page: sits to the right of the sidebar ─────────────── */
+.page {
+  margin-left: var(--sidebar-w);
+  padding: 40px 40px 60px 40px;
+  min-height: 100vh;
+  max-width: calc(100vw - var(--sidebar-w));
+}
+
+.page-title {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  color: var(--plum);
+  margin-bottom: 4px;
+}
+
+.page-sub {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* ── Cards ─────────────────────────────────────────────── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.card-sm {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+}
+
+/* ── Buttons ────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.btn-primary { background: var(--rose); color: #fff; }
+.btn-primary:hover:not(:disabled) { background: #d44f65; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(232,99,122,0.35); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-outline { background: transparent; color: var(--rose); border: 1.5px solid var(--rose); }
+.btn-outline:hover { background: var(--rose-pale); }
+
+.btn-ghost { background: transparent; color: var(--text-muted); border: 1.5px solid var(--border); }
+.btn-ghost:hover { background: var(--blush); color: var(--plum); border-color: var(--rose-light); }
+
+.btn-danger { background: transparent; color: #c0392b; border: 1.5px solid #e0b0b0; padding: 5px 12px; font-size: 0.82rem; }
+.btn-danger:hover { background: #fdf0f0; }
+
+/* ── Form elements ──────────────────────────────────────── */
+.input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="search"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--white);
+  transition: border-color 0.2s;
+  outline: none;
+  display: block;
+}
+.input:focus, input:focus, select:focus, textarea:focus {
+  border-color: var(--rose-light);
+  box-shadow: 0 0 0 3px rgba(232,99,122,0.1);
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--plum);
+  display: block;
+  margin-bottom: 6px;
+}
+
+textarea { resize: vertical; min-height: 72px; }
+
+/* ── Grid helpers ───────────────────────────────────────── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+/* ── Badges ─────────────────────────────────────────────── */
+.badge { display: inline-block; padding: 3px 12px; border-radius: 50px; font-size: 0.78rem; font-weight: 500; }
+.badge-rose  { background: var(--rose-pale); color: var(--rose); }
+.badge-plum  { background: #f0e8f5; color: var(--plum); }
+.badge-green { background: #e8f8f2; color: #2e9e6b; }
+.badge-amber { background: #fff5e0; color: #c07a00; }
+
+/* ── Phase tags ─────────────────────────────────────────── */
+.phase-tag { padding: 4px 14px; border-radius: 50px; font-size: 0.82rem; font-weight: 600; text-transform: capitalize; }
+.phase-menstrual  { background: #fde8ec; color: var(--menstrual); }
+.phase-follicular { background: #fff5e0; color: var(--follicular); }
+.phase-ovulation  { background: #e8f8f2; color: var(--ovulation); }
+.phase-luteal     { background: #ede9fb; color: var(--luteal); }
+
+/* ── Loader ─────────────────────────────────────────────── */
+.page-loader { display: flex; gap: 8px; justify-content: center; align-items: center; height: 100vh; }
+.loader-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--rose); animation: bounce 0.9s infinite ease-in-out; }
+.loader-dot:nth-child(2) { animation-delay: 0.15s; }
+.loader-dot:nth-child(3) { animation-delay: 0.30s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* ── Empty state ────────────────────────────────────────── */
+.empty { text-align: center; padding: 48px 20px; color: var(--text-muted); }
+.empty-icon { font-size: 3rem; margin-bottom: 12px; }
+.empty p { font-size: 0.95rem; }
+
+/* ── Divider ────────────────────────────────────────────── */
+.divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+/* ══ MOBILE ════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .page {
+    margin-left: 0;
+    max-width: 100%;
+    padding: 20px 16px 100px;
+  }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
