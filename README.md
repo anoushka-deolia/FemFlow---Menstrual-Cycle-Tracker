@@ -115,7 +115,7 @@ src/
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/femflow.git
+git clone https://github.com/YOUR_USERNAME/femflow.git](https://github.com/anoushka-deolia/FemFlow---Menstrual-Cycle-Tracker)
 cd femflow
 npm install
 ```
